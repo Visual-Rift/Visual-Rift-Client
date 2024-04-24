@@ -1,0 +1,59 @@
+.formInputDiv {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.formInput {
+  background-color: #c5c5c5;
+  padding: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  color: #625b5b;
+  font-weight: 600;
+  transition: 0.1s ease-out;
+  outline: none;
+  border-bottom: 1px solid var(--hacktextDark);
+  border-radius: 5px;
+}
+
+.formInput:-webkit-autofill,
+.formInput:-webkit-autofill:hover,
+.formInput:-webkit-autofill:focus,
+.formInput:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--hacktextLight) inset !important;
+  -webkit-text-fill-color: var(--hacktextDark) !important;
+}
+
+.formInput:focus {
+  outline: none;
+}
+
+.formInput::placeholder {
+  font-weight: 600;
+}
+
+.label {
+  font-size: 1rem;
+  background-color: transparent;
+  color: #000;
+  font-weight: 500;
+  transition: 0.1s ease-out;
+  pointer-events: none;
+  padding-block: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.formInput:focus + .label {
+  top: 0;
+  transform: translateY(-30%) scale(0.85);
+}
+
+.formInput:not(:placeholder-shown) + .label {
+  top: 0;
+  transform: translateY(-30%) scale(0.85);
+}

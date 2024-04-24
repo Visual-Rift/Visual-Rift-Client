@@ -1,0 +1,43 @@
+.sideBar {
+  width: 300px;
+  height: fit-content;
+  background-color: #f8f9fa;
+  color: #000;
+  z-index: 1;
+  overflow-x: hidden;
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 50px rgba(83, 82, 82, 0.45);
+  border-radius: 10px;
+}
+
+.sideBarDiv {
+  border-top: 2px solid black;
+  padding: 1rem 4px;
+  box-sizing: border-box;
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.sideBarHeading {
+  margin-block: 0 1rem;
+}
+
+.cloudProviderButton {
+  background-color: #ae00ffbe;
+  width: 100%;
+  outline: none;
+  border: none;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #ae00ff;
+    outline: none;
+    border: none;
+  }
+}

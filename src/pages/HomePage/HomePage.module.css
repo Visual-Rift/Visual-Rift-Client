@@ -1,0 +1,24 @@
+.mainDiv {
+  position: relative;
+  overflow: hidden;
+}
+
+.customSideBar {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  height: 100dvh;
+  margin-top: 10dvh;
+}
+
+.leftSideBar {
+  top: 50%;
+  left: 1%;
+  transform: translate(-0%, -50%);
+}
+
+.rightSideBar {
+  top: 50%;
+  right: 1%;
+  transform: translate(0%, -50%);
+}
