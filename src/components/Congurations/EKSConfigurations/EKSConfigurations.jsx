@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+
 
 import styles from "./EKSConfigurations.module.css";
 
@@ -24,6 +25,9 @@ const EKSConfigurations = () => {
   // RELEASE STATE
   const [released, setReleased] = useState(false);
 
+
+
+
   //   UPDATE HANDLERS
 
   const updateEksClusterName = (e) => {
@@ -46,9 +50,19 @@ const EKSConfigurations = () => {
     setReleased(!released);
   };
 
+
   const submitForm = () => {
     if (githubUrl === "") {
       alert("Please fill all the fields");
+      return;
+    }
+
+    // Parse minNodes and maxNodes to integers
+    const parsedMinNodes = parseInt(minNodes, 10);
+    const parsedMaxNodes = parseInt(maxNodes, 10);
+
+    if (isNaN(parsedMinNodes) || isNaN(parsedMaxNodes)) {
+      alert("Please enter valid numbers for minNodes and maxNodes");
       return;
     }
 
@@ -56,6 +70,8 @@ const EKSConfigurations = () => {
 
     const formData = {
       githubUrl,
+      minNodes: parsedMinNodes, // Use parsed value
+      maxNodes: parsedMaxNodes, // Use parsed value
     };
 
     axios
@@ -71,6 +87,10 @@ const EKSConfigurations = () => {
         setLoading(false);
       });
   };
+
+
+
+
 
   return (
     <div className={mainDiv}>
