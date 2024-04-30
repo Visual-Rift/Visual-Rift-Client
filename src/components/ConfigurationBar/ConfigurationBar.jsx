@@ -7,6 +7,7 @@ import ApplicationConfigurations from "../Congurations/ApplicationConfigurations
 import ECRConfigurations from "../Congurations/ECRConfigurations/ECRConfigurations";
 import S3Configurations from "../Congurations/S3Configurations/S3Configurations";
 import RDSConfigurations from "../Congurations/RDSConfigurations/RDSConfigurations";
+import VPCConfigurations from "../Congurations/VPCConfigurations/VPCConfigurations";
 
 const { sideBar } = styles;
 
@@ -25,6 +26,7 @@ const ConfigurationBar = ({ selectedNode }) => {
       {node === "ECR" && <ECRConfigurations />}
       {node === "AWS S3" && <S3Configurations />}
       {node === "AWS RDS" && <RDSConfigurations />}
+      {node === "VPC" && <VPCConfigurations />}
     </div>
   );
 };
