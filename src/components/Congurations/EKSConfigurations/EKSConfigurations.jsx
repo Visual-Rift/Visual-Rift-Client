@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = "http://localhost:8080";
 
 import styles from "./EKSConfigurations.module.css";
 
@@ -23,6 +25,10 @@ const EKSConfigurations = () => {
 
   // RELEASE STATE
   const [released, setReleased] = useState(false);
+
+
+  const socket = socketIOClient(ENDPOINT);
+
 
   //   UPDATE HANDLERS
 
@@ -71,6 +77,12 @@ const EKSConfigurations = () => {
         setLoading(false);
       });
   };
+
+
+  
+  socket.on('message',text=>{
+    console.log(text);
+  })
 
   return (
     <div className={mainDiv}>
