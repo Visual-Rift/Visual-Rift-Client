@@ -4,6 +4,8 @@ import styles from "./ConfigurationBar.module.css";
 import EC2Configurations from "../Congurations/EC2Configurations/EC2Configurations";
 import EKSConfigurations from "../Congurations/EKSConfigurations/EKSConfigurations";
 import ApplicationConfigurations from "../Congurations/ApplicationConfigurations/ApplicationConfigurations";
+import ECRConfigurations from "../Congurations/ECRConfigurations/ECRConfigurations";
+import S3Configurations from "../Congurations/S3Configurations/S3Configurations";
 
 const { sideBar } = styles;
 
@@ -19,6 +21,8 @@ const ConfigurationBar = ({ selectedNode }) => {
       {(node === "APP" || selectedNode === null) && (
         <ApplicationConfigurations />
       )}
+      {node === "ECR" && <ECRConfigurations />}
+      {node === "AWS S3" && <S3Configurations />}
     </div>
   );
 };

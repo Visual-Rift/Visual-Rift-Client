@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-
 
 import styles from "./EKSConfigurations.module.css";
 
@@ -25,9 +24,6 @@ const EKSConfigurations = () => {
   // RELEASE STATE
   const [released, setReleased] = useState(false);
 
-
-
-
   //   UPDATE HANDLERS
 
   const updateEksClusterName = (e) => {
@@ -49,7 +45,6 @@ const EKSConfigurations = () => {
   const toggleRelease = () => {
     setReleased(!released);
   };
-
 
   const submitForm = () => {
     if (githubUrl === "") {
@@ -87,10 +82,6 @@ const EKSConfigurations = () => {
         setLoading(false);
       });
   };
-
-
-
-
 
   return (
     <div className={mainDiv}>
