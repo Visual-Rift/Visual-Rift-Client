@@ -19,6 +19,7 @@ import ImageNode from "../../components/ImageNode/ImageNode";
 import ToolIcon from "../../components/ToolIcon/ToolIcon";
 import SideBar from "../../components/SideBar/ServicesBar";
 import ConfigurationBar from "../../components/ConfigurationBar/ConfigurationBar";
+import Logger from "../../components/Logger/Logger";
 
 // NODE TYPES
 
@@ -115,6 +116,9 @@ const HomePage = () => {
       </div>
       <div className={[customSideBar, rightSideBar].join(" ")}>
         <ConfigurationBar selectedNode={selectedNode} />
+      </div>
+      <div>
+        <Logger/>
       </div>
       <ReactFlow
         nodes={nodes}

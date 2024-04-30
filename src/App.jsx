@@ -7,12 +7,12 @@ import Logger from "./components/Logger/Logger";
 function App() {
   return (
     <div className="mainDiv">
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<HomePage />} />
-      </Routes> */}
+      </Routes>
       {/* <SingnUp/>
       <SingnIn/> */}
-      <Logger/>
+      {/* <Logger/> */}
     </div>
   );
 }
