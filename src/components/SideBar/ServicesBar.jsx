@@ -71,6 +71,26 @@ const ServicesBar = ({ setSelectedService }) => {
       isSelected: false,
     },
     {
+      name: "Internet Gateway",
+      imgUrl: "/icons/networkServices/internetgateway.png",
+      isSelected: false,
+    },
+    {
+      name: "Public Subnet",
+      imgUrl: "/icons/networkServices/publicsubnet.png",
+      isSelected: false,
+    },
+    {
+      name: "Private Subnet",
+      imgUrl: "/icons/networkServices/privatesubnet.png",
+      isSelected: false,
+    },
+    {
+      name: "Route Table",
+      imgUrl: "/icons/networkServices/routetable.png",
+      isSelected: false,
+    },
+    {
       name: "ELB",
       imgUrl: "/icons/networkServices/elb.png",
       isSelected: false,
@@ -84,18 +104,28 @@ const ServicesBar = ({ setSelectedService }) => {
 
   const databaseServices = [
     {
-      name: "MongoDB",
-      imgUrl: "/icons/databaseStorage/mongodb.png",
-      isSelected: false,
-    },
-    {
       name: "DynamoDB",
       imgUrl: "/icons/databaseStorage/dynamodb.png",
       isSelected: false,
     },
     {
+      name: "AWS RDS",
+      imgUrl: "/icons/databaseStorage/rds.png",
+      isSelected: false,
+    },
+    {
+      name: "AWS EBS",
+      imgUrl: "/icons/databaseStorage/ebs.png",
+      isSelected: false,
+    },
+    {
       name: "AWS S3",
       imgUrl: "/icons/databaseStorage/awss3.png",
+      isSelected: false,
+    },
+    {
+      name: "MongoDB",
+      imgUrl: "/icons/databaseStorage/mongodb.png",
       isSelected: false,
     },
     {
@@ -135,13 +165,30 @@ const ServicesBar = ({ setSelectedService }) => {
       </div>
 
       <SideBarDiv
+        serviceName={"Frequently Used Services"}
         services={frequentlyUsedServices}
         selectService={selectService}
       />
-      <SideBarDiv services={computingServices} selectService={selectService} />
-      <SideBarDiv services={networkServices} selectService={selectService} />
-      <SideBarDiv services={databaseServices} selectService={selectService} />
-      <SideBarDiv services={analyticsServices} selectService={selectService} />
+      <SideBarDiv
+        serviceName={"Computing Services"}
+        services={computingServices}
+        selectService={selectService}
+      />
+      <SideBarDiv
+        serviceName={"Network Services"}
+        services={networkServices}
+        selectService={selectService}
+      />
+      <SideBarDiv
+        serviceName={"Database Services"}
+        services={databaseServices}
+        selectService={selectService}
+      />
+      <SideBarDiv
+        serviceName={"Analytics Services"}
+        services={analyticsServices}
+        selectService={selectService}
+      />
     </div>
   );
 };

@@ -10,10 +10,10 @@ const {
   cloudServiceName,
 } = styles;
 
-const SideBarDiv = ({ services, selectService }) => {
+const SideBarDiv = ({ serviceName, services, selectService }) => {
   return (
     <div className={sideBarDiv}>
-      <h4 className={sideBarHeading}>Analytics Services</h4>
+      <h4 className={sideBarHeading}>{serviceName}</h4>
       <div className={sideBarServices}>
         {services.map((service) => (
           <div
@@ -35,6 +35,7 @@ const SideBarDiv = ({ services, selectService }) => {
 };
 
 SideBarDiv.propTypes = {
+  serviceName: PropTypes.string,
   services: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
