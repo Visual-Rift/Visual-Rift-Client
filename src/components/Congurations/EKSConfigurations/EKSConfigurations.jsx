@@ -50,9 +50,19 @@ const EKSConfigurations = () => {
     setReleased(!released);
   };
 
+
   const submitForm = () => {
     if (githubUrl === "") {
       alert("Please fill all the fields");
+      return;
+    }
+
+    // Parse minNodes and maxNodes to integers
+    const parsedMinNodes = parseInt(minNodes, 10);
+    const parsedMaxNodes = parseInt(maxNodes, 10);
+
+    if (isNaN(parsedMinNodes) || isNaN(parsedMaxNodes)) {
+      alert("Please enter valid numbers for minNodes and maxNodes");
       return;
     }
 
@@ -60,6 +70,8 @@ const EKSConfigurations = () => {
 
     const formData = {
       githubUrl,
+      minNodes: parsedMinNodes, // Use parsed value
+      maxNodes: parsedMaxNodes, // Use parsed value
     };
 
     axios
@@ -77,7 +89,7 @@ const EKSConfigurations = () => {
   };
 
 
-  
+
 
 
   return (
